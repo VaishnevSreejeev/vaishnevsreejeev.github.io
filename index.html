@@ -28,10 +28,10 @@
                 </nav>
                  <!-- Mobile Menu -->
                 <div id="mobile-menu" class="hidden md:hidden">
-                    <a href="#about" class="mobile-nav-link">About</a>
-                    <a href="#experience" class="mobile-nav-link">Experience</a>
-                    <a href="#projects" class="mobile-nav-link">Projects</a>
-                    <a href="#research" class="mobile-nav-link">Research</a>
+                    <a href="#about" class="mobile-nav-link" onclick="navigateTo('home-page', '#about')">About</a>
+                    <a href="#experience" class="mobile-nav-link" onclick="navigateTo('home-page', '#experience')">Experience</a>
+                    <a href="#projects" class="mobile-nav-link" onclick="navigateTo('home-page', '#projects')">Projects</a>
+                    <a href="#research" class="mobile-nav-link" onclick="navigateTo('home-page', '#research')">Research</a>
                     <a href="mailto:vaishnevsreejeev@gmail.com" class="mobile-nav-link">Contact</a>
                 </div>
             </header>
@@ -132,21 +132,106 @@
                 
                 <section id="awards" class="py-24 reveal">
                     <h2 class="section-title">Awards & Certifications</h2>
-                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
                         <div class="card p-6"><strong>Best Project Award</strong> - CSE Dept, MACE (2025)</div>
                         <div class="card p-6"><strong>Third Prize Winner</strong> - IEEE Hack-A-Addict Hackathon (2025)</div>
                         <div class="card p-6"><strong>AWS Cloud Computing Fundamentals</strong> (2024)</div>
                         <div class="card p-6"><strong>Artificial Neural Network (ANN)</strong> - IIIT Kottayam (2023)</div>
-                        <div class="card p-6"><strong>Quantum Computing and Security</strong> - IIIT Kottayam (2023)</div>
+                        <div class="card p-6 col-span-1 md:col-span-2"><strong>Quantum Computing and Security</strong> - IIIT Kottayam (2023)</div>
                      </div>
                 </section>
             </main>
         </div>
 
         <!-- PROJECT PAGES -->
-        <div id="project-dora" class="page"></div>
-        <div id="project-backtogether" class="page"></div>
-        <div id="project-cellular" class="page"></div>
+        <div id="project-dora" class="page">
+            <main class="container mx-auto px-6 py-20">
+                <a href="#" onclick="navigateTo('home-page')" class="text-accent-color hover:underline mb-8 inline-block">&larr; Back to Home</a>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">DoraAI: Indoor Navigation System</h1>
+                <p class="text-lg text-gray-300 mb-12">Developed during a 4-hour internal hackathon at KeyValue Software Systems.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="md:col-span-2">
+                        <h2 class="text-2xl font-bold text-white mb-3">The Problem</h2>
+                        <p class="mb-6 text-gray-300">Newcomers and visitors to large, complex corporate campuses like SmartCity, Kakkanad, often struggle to find specific offices, meeting rooms, or even an individual's desk. GPS is ineffective indoors, creating a need for a high-accuracy, 'Google Maps'-like system for internal spaces.</p>
+                        <h2 class="text-2xl font-bold text-white mb-3">Our Solution</h2>
+                        <p class="mb-6 text-gray-300">DoraAI was built to provide a seamless indoor navigation experience. Instead of GPS, we leveraged a network of Bluetooth Low Energy (BLE) beacons placed strategically throughout the building. The system uses trilateration algorithms to get an initial position estimate from the beacon signals, which is then fed into a machine learning model. This ML model continuously optimizes the location data, correcting for signal noise and multipath interference, achieving high-precision, real-time tracking on a user's device.</p>
+                    </div>
+                    <div class="card p-6 rounded-lg h-fit">
+                        <h3 class="text-xl font-semibold text-white mb-4">Project Info</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li><strong>Role:</strong> ML Developer, Prototyper</li>
+                            <li><strong>Context:</strong> 4-Hour Hackathon</li>
+                            <li><strong>Company:</strong> KeyValue Software Systems</li>
+                            <li class="pt-2"><strong>Tech Stack:</strong>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="tag">Python</span><span class="tag">BLE</span><span class="tag">ML</span><span class="tag">Trilateration</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+        <div id="project-backtogether" class="page">
+            <main class="container mx-auto px-6 py-20">
+                <a href="#" onclick="navigateTo('home-page')" class="text-accent-color hover:underline mb-8 inline-block">&larr; Back to Home</a>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Back Together: Anti-Addiction Platform</h1>
+                <p class="text-lg text-gray-300 mb-12">Third Prize Winner - IEEE Hack-A-Addict Hackathon 2025.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="md:col-span-2">
+                        <h2 class="text-2xl font-bold text-white mb-3">The Problem</h2>
+                        <p class="mb-6 text-gray-300">Drug addiction is a pressing global issue that lacks accessible resources, real-time monitoring, and effective intervention strategies, creating challenges for prevention, rehabilitation, and law enforcement.</p>
+                        <h2 class="text-2xl font-bold text-white mb-3">Our Solution</h2>
+                        <p class="mb-6 text-gray-300">"Back Together" is an all-in-one Flutter-based platform that provides a multi-faceted solution for four distinct user types: individuals in recovery, law enforcement, healthcare experts, and community volunteers. Key innovations include ML-powered hotspot detection, a 24/7 AI support chatbot, and integrated telehealth features.</p>
+                        <img src="https://i.imgur.com/uGZ4G06.png" alt="Back Together App UI" class="project-image">
+                    </div>
+                    <div class="card p-6 rounded-lg h-fit">
+                        <h3 class="text-xl font-semibold text-white mb-4">Project Info</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li><strong>Role:</strong> Team Lead, Full-Stack Dev</li>
+                            <li><strong>Context:</strong> IEEE Hackathon</li>
+                            <li><strong>Award:</strong> 3rd Prize Winner</li>
+                            <li class="pt-2"><strong>Tech Stack:</strong>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="tag">Flutter</span><span class="tag">Python</span><span class="tag">ML</span><span class="tag">Firebase</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div id="project-cellular" class="page">
+            <main class="container mx-auto px-6 py-20">
+                <a href="#" onclick="navigateTo('home-page')" class="text-accent-color hover:underline mb-8 inline-block">&larr; Back to Home</a>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Graph-Based Cellular Modelling</h1>
+                <p class="text-lg text-gray-300 mb-12">Awarded "Best Project" by the CSE Department at MACE.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="md:col-span-2">
+                        <h2 class="text-2xl font-bold text-white mb-3">The Challenge</h2>
+                        <p class="mb-6 text-gray-300">Integrating vast amounts of biological data to understand the cell as a dynamic, whole system remains a major challenge. We aimed to create a virtual cell model that could simulate how the entire system responds to external stimuli.</p>
+                        <h2 class="text-2xl font-bold text-white mb-3">Our Approach</h2>
+                        <p class="mb-6 text-gray-300">We developed a novel framework to simulate *Mycoplasma Genitalium*. The entire cell was represented as a graph, where nodes are proteins. We then applied a Graph Transformer architecture to predict how each protein would move in response to osmotic stress, training the model on experimental gene expression data.</p>
+                        <img src="https://i.imgur.com/XFqQJgS.png" alt="Cellular Modelling Visualization" class="project-image">
+                    </div>
+                    <div class="card p-6 rounded-lg h-fit">
+                        <h3 class="text-xl font-semibold text-white mb-4">Project Info</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li><strong>Role:</strong> Lead Researcher</li>
+                            <li><strong>Context:</strong> Final Year Project</li>
+                            <li><strong>Award:</strong> Best Project</li>
+                            <li class="pt-2"><strong>Tech Stack:</strong>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="tag">PyTorch</span><span class="tag">Transformers</span><span class="tag">Graph ML</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
 
     <script src="https://cdn.tailwindcss.com"></script>
