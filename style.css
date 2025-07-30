@@ -268,7 +268,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.project-image, .project-video {
+.project-image {
     max-width: 100%; /* Ensure images and videos are not wider than their container */
     height: auto; /* Maintain aspect ratio */
     border-radius: 0.75rem;
@@ -276,6 +276,27 @@ body {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.75rem;
+    overflow: hidden; /* Hide overflow for rounded corners */
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .icon-link svg {
@@ -332,6 +353,7 @@ body {
     transform: scale(0.95);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow-y: auto; /* Add scrollbar if content exceeds height */
 }
 .modal.active .modal-content {
     transform: scale(1);
