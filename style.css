@@ -11,6 +11,8 @@
     --accent-color: #ff69b4; /* Hot Pink */
     --accent-glow: rgba(255, 105, 180, 0.5);
     --accent-secondary: #00ffff; /* Cyan */
+    --gold-gradient: linear-gradient(145deg, #d4af37, #f0e68c, #d4af37);
+    --gold-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
 }
 
 body {
@@ -375,6 +377,23 @@ body {
     color: var(--text-primary);
 }
 
+/* Awards Styling */
+.award-item {
+    background: var(--gold-gradient);
+    color: #4a3a1c; /* Dark brown/gold text color */
+    font-weight: 700;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 2px solid #e0c48f;
+    box-shadow: var(--gold-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.award-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -403,5 +422,9 @@ body {
     }
     .section-title {
         font-size: 1.875rem;
+    }
+    .award-item {
+        padding: 1rem;
+        font-size: 0.9rem;
     }
 }
