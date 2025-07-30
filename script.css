@@ -1,0 +1,111 @@
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const pages = document.querySelectorAll('.page');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // --- Page Navigation Logic ---
+    const pageContent = {
+        'project-dora': {
+            title: "DoraAI: Indoor Navigation System",
+            subtitle: "Developed during a 4-hour internal hackathon at KeyValue Software Systems.",
+            problem: "Newcomers and visitors to large, complex corporate campuses like SmartCity, Kakkanad, often struggle to find specific offices, meeting rooms, or even an individual's desk. GPS is ineffective indoors, creating a need for a high-accuracy, 'Google Maps'-like system for internal spaces.",
+            solution: "DoraAI was built to provide a seamless indoor navigation experience. Instead of GPS, we leveraged a network of Bluetooth Low Energy (BLE) beacons placed strategically throughout the building. The system uses trilateration algorithms to get an initial position estimate from the beacon signals, which is then fed into a machine learning model. This ML model continuously optimizes the location data, correcting for signal noise and multipath interference, achieving high-precision, real-time tracking on a user's device.",
+            role: "ML Developer, Prototyper",
+            context: "4-Hour Hackathon",
+            company: "KeyValue Software Systems",
+            tags: ["Python", "BLE", "ML", "Trilateration"],
+            image: "" // No image provided for this one
+        },
+        'project-backtogether': {
+            title: "Back Together: Anti-Addiction Platform",
+            subtitle: "Third Prize Winner - IEEE Hack-A-Addict Hackathon 2025.",
+            problem: "Drug addiction is a pressing global issue that lacks accessible resources, real-time monitoring, and effective intervention strategies, creating challenges for prevention, rehabilitation, and law enforcement.",
+            solution: "\"Back Together\" is an all-in-one Flutter-based platform that provides a multi-faceted solution for four distinct user types: individuals in recovery, law enforcement, healthcare experts, and community volunteers. Key innovations include ML-powered hotspot detection, a 24/7 AI support chatbot, and integrated telehealth features.",
+            role: "Team Lead, Full-Stack Dev",
+            context: "IEEE Hackathon",
+            company: "3rd Prize Winner",
+            tags: ["Flutter", "Python", "ML", "Firebase"],
+            image: "https://i.imgur.com/uGZ4G06.png"
+        },
+        'project-cellular': {
+            title: "Graph-Based Cellular Modelling",
+            subtitle: "Awarded \"Best Project\" by the CSE Department at MACE.",
+            problem: "Integrating vast amounts of biological data to understand the cell as a dynamic, whole system remains a major challenge. We aimed to create a virtual cell model that could simulate how the entire system responds to external stimuli.",
+            solution: "We developed a novel framework to simulate *Mycoplasma Genitalium*. The entire cell was represented as a graph, where nodes are proteins. We then applied a Graph Transformer architecture to predict how each protein would move in response to osmotic stress, training the model on experimental gene expression data.",
+            role: "Lead Researcher",
+            context: "Final Year Project",
+            company: "Best Project Award",
+            tags: ["PyTorch", "Transformers", "Graph ML"],
+            image: "https://i.imgur.com/XFqQJgS.png"
+        }
+    };
+
+    window.navigateTo = function(pageId) {
+        pages.forEach(page => page.classList.remove('active'));
+        const targetPage = document.getElementById(pageId);
+
+        if (pageId.startsWith('project-')) {
+            const project = pageContent[pageId];
+            targetPage.innerHTML = `
+                <main class="container mx-auto px-6 py-20">
+                    <a href="#" onclick="navigateTo('home-page')" class="text-accent-color hover:underline mb-8 inline-block">&larr; Back to Home</a>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">${project.title}</h1>
+                    <p class="text-lg text-gray-300 mb-12">${project.subtitle}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="md:col-span-2">
+                            <h2 class="text-2xl font-bold text-white mb-3">The Problem</h2>
+                            <p class="mb-6 text-gray-300">${project.problem}</p>
+                            <h2 class="text-2xl font-bold text-white mb-3">Our Solution</h2>
+                            <p class="mb-6 text-gray-300">${project.solution}</p>
+                            ${project.image ? `<img src="${project.image}" alt="${project.title}" class="project-image">` : ''}
+                        </div>
+                        <div class="card p-6 rounded-lg h-fit">
+                            <h3 class="text-xl font-semibold text-white mb-4">Project Info</h3>
+                            <ul class="space-y-3 text-gray-300">
+                                <li><strong>Role:</strong> ${project.role}</li>
+                                <li><strong>Context:</strong> ${project.context}</li>
+                                <li><strong>Award/Company:</strong> ${project.company}</li>
+                                <li class="pt-2"><strong>Tech Stack:</strong>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </main>
+            `;
+        }
+        
+        targetPage.classList.add('active');
+        window.scrollTo(0, 0);
+        mobileMenu.classList.add('hidden'); // Close menu on navigation
+    }
+
+    // --- Scroll Animation Logic ---
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        revealElements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 100) {
+                el.classList.add('active');
+            }
+        });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // --- Mobile Menu Toggle ---
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+});
