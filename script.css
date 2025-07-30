@@ -1,71 +1,88 @@
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
-    const pages = document.querySelectorAll('.page');
+    // --- CACHE DOM ELEMENTS ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    const projectCards = document.querySelectorAll('.project-card');
+    const modals = document.querySelectorAll('.modal');
+    const modalOverlay = document.querySelector('.modal-overlay');
 
-    // --- Page Navigation Logic ---
-    // This function handles showing and hiding the correct page divs.
-    window.navigateTo = function(pageId, anchor = null) {
-        // Hide all pages
-        pages.forEach(page => page.classList.remove('active'));
-        
-        // Show the target page
-        const targetPage = document.getElementById(pageId);
-        if (targetPage) {
-            targetPage.classList.add('active');
+    // --- SMOOTH SCROLLING ---
+    const smoothScrollTo = (selector) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
         }
+    };
 
-        // Handle scrolling to a specific section (anchor) if provided
-        if (anchor) {
-            const anchorElement = document.querySelector(anchor);
-            if (anchorElement) {
-                anchorElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        } else {
-            // Otherwise, scroll to the top of the new page
-            window.scrollTo(0, 0);
+    // --- MODAL LOGIC ---
+    const openModal = (modalId) => {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modalOverlay.classList.add('active');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
+    };
 
-        // Always close mobile menu after a navigation action
-        mobileMenu.classList.add('hidden');
-    }
+    const closeModal = () => {
+        modalOverlay.classList.remove('active');
+        modals.forEach(modal => modal.classList.remove('active'));
+        document.body.style.overflow = ''; // Restore scrolling
+    };
 
-    // --- Scroll Animation Logic ---
-    // This function adds the 'active' class to elements with the 'reveal' class
-    // when they scroll into the viewport.
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const modalId = card.dataset.modalTarget;
+            openModal(modalId);
+        });
+    });
+
+    document.querySelectorAll('.modal-close-button').forEach(button => {
+        button.addEventListener('click', closeModal);
+    });
+    modalOverlay.addEventListener('click', closeModal);
+
+    // --- SCROLL REVEAL ANIMATION ---
     const revealOnScroll = () => {
         const revealElements = document.querySelectorAll('.reveal');
         const windowHeight = window.innerHeight;
         revealElements.forEach(el => {
-            // Check if the element is currently visible on the page
-            if (el.offsetParent !== null) {
-                const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) {
-                    el.classList.add('active');
-                }
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 100) {
+                el.classList.add('active');
             }
         });
     };
     window.addEventListener('scroll', revealOnScroll);
-    
-    // Initial check to reveal elements already in view on load
-    setTimeout(revealOnScroll, 100);
+    setTimeout(revealOnScroll, 100); // Initial check
 
-    // --- Mobile Menu Toggle ---
+    // --- MOBILE MENU TOGGLE ---
     mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.style.display = isExpanded ? 'none' : 'block';
+        mobileMenuButton.innerHTML = isExpanded ? '☰' : '&times;';
     });
 
-    // Add event listeners to mobile menu links to handle navigation
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    // --- EVENT LISTENERS FOR NAVIGATION ---
+    navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            if (link.getAttribute('href').startsWith('#')) {
-                e.preventDefault(); // Prevent default anchor jump
-                const pageId = 'home-page'; // Assume all anchor links are on the home page
-                const anchor = link.getAttribute('href');
-                navigateTo(pageId, anchor);
-            }
+            e.preventDefault();
+            smoothScrollTo(link.getAttribute('href'));
+        });
+    });
+
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            smoothScrollTo(link.getAttribute('href'));
+            // Close mobile menu after clicking a link
+            mobileMenu.style.display = 'none';
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            mobileMenuButton.innerHTML = '☰';
         });
     });
 });
