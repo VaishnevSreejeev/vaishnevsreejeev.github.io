@@ -1,0 +1,282 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg-color: #0a0918;
+    --primary-color: #100f28;
+    --secondary-color: #1c1a3e;
+    --border-color: #3d3b6b;
+    --text-primary: #e0e0ff;
+    --text-secondary: #a7a6d0;
+    --accent-color: #ff69b4; /* Hot Pink */
+    --accent-glow: rgba(255, 105, 180, 0.5);
+    --accent-secondary: #00ffff; /* Cyan */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, var(--bg-color) 0%, #1a1a3a 100%);
+    color: var(--text-secondary);
+    overflow-x: hidden;
+}
+
+.glass-nav {
+    background-color: rgba(16, 15, 40, 0.5);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-link {
+    position: relative;
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+.nav-link:hover {
+    color: var(--text-primary);
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+.mobile-nav-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-primary);
+}
+
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px var(--accent-glow);
+}
+
+.hero-section {
+    min-height: 80vh;
+    padding: 4rem 0;
+}
+
+.avatar-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+}
+.avatar-container::before, .avatar-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 4s infinite ease-in-out;
+}
+.avatar-container::before {
+    border: 2px solid var(--accent-secondary);
+    animation-delay: 0s;
+}
+.avatar-container::after {
+    border: 2px solid var(--accent-color);
+    animation-delay: -2s;
+}
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    position: relative;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--accent-secondary), var(--accent-color));
+    border-radius: 2px;
+}
+
+.section-content {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.125rem;
+    line-height: 1.75;
+}
+
+.card {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border-radius: 0.75rem;
+}
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 25px var(--accent-glow);
+}
+
+.project-card {
+    cursor: pointer;
+}
+
+.timeline {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+.timeline-item {
+    padding: 1rem 2.5rem;
+    position: relative;
+    width: 50%;
+}
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+.timeline-dot {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--accent-secondary);
+    top: 24px;
+    border-radius: 50%;
+    z-index: 1;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -8px;
+}
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -8px;
+}
+.timeline-content {
+    padding: 1.5rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    background-color: rgba(0, 255, 255, 0.1);
+    color: var(--accent-secondary);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.page {
+    display: none;
+    animation: pageFadeIn 0.8s ease-out;
+}
+.page.active {
+    display: block;
+}
+@keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-image {
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 20px;
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 45px;
+        padding-right: 0;
+        left: 0 !important;
+    }
+    .timeline-dot {
+        left: 12px !important;
+        right: auto !important;
+    }
+    .hero-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .section-title {
+        font-size: 1.875rem;
+    }
+}
