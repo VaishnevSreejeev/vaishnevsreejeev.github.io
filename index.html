@@ -8,158 +8,195 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> </head>
+</head>
 <body class="antialiased">
 
-    <div id="app">
-        <div id="home-page" class="page active">
-            <header class="glass-nav sticky top-0 z-50">
-                <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-                    <a href="#" onclick="navigateTo('home-page')" class="text-xl font-bold text-white">Vaishnev Sreejeev</a>
-                    <div class="hidden md:flex items-center space-x-6">
-                        <a href="#about" class="nav-link">About</a>
-                        <a href="#experience" class="nav-link">Experience</a>
-                        <a href="#projects" class="nav-link">Projects</a>
-                        <a href="#research" class="nav-link">Research</a>
-                    </div>
-                     <a href="mailto:vaishnevsreejeev@gmail.com" class="hidden md:block btn btn-primary">Contact</a>
-                    <button id="mobile-menu-button" class="md:hidden text-white text-2xl">☰</button>
-                </nav>
-                 <div id="mobile-menu" class="hidden md:hidden">
-                    <a href="#about" class="mobile-nav-link" onclick="navigateTo('home-page', '#about')">About</a>
-                    <a href="#experience" class="mobile-nav-link" onclick="navigateTo('home-page', '#experience')">Experience</a>
-                    <a href="#projects" class="mobile-nav-link" onclick="navigateTo('home-page', '#projects')">Projects</a>
-                    <a href="#research" class="mobile-nav-link" onclick="navigateTo('home-page', '#research')">Research</a>
-                    <a href="mailto:vaishnevsreejeev@gmail.com" class="mobile-nav-link">Contact</a>
-                </div>
-            </header>
+    <!-- Header -->
+    <header class="glass-nav sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold text-white">Vaishnev Sreejeev</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#research" class="nav-link">Research</a>
+            </div>
+            <a href="mailto:vaishnevsreejeev@gmail.com" class="hidden md:block btn btn-primary">Contact</a>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl z-50">☰</button>
+        </nav>
+    </header>
 
-            <main class="container mx-auto px-6">
-                <section class="hero-section flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-2/3 text-center md:text-left">
-                        <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">AI & Machine Learning Engineer</h1>
-                        <p class="text-lg md:text-xl text-gray-300 mb-8">I build intelligent, scalable products by applying cutting-edge research in LLMs and Agentic AI to solve complex, real-world problems.</p>
-                    </div>
-                    <div class="md:w-1/3 flex justify-center">
-                        <div class="avatar-container">
-                            <img src="http://googleusercontent.com/file_content/2" alt="Vaishnev Sreejeev" class="avatar-image">
-                        </div>
-                    </div>
-                </section>
-
-                <section id="about" class="py-24 reveal">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="section-content">Final-year B.Tech student at MACE, Kothamangalam, with a deep passion for Artificial Intelligence. My journey is driven by a desire to not only understand complex systems like LLMs and Brain-Computer Interfaces but to apply that knowledge to build practical, real-world solutions. As a proven leader in technical communities and an experienced AI educator, I bring a unique blend of technical depth, leadership, and communication to every challenge.</p>
-                </section>
-
-                <section id="experience" class="py-24 reveal">
-                    <h2 class="section-title">Experience & Leadership</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content card">
-                                <p class="text-sm text-gray-400">June 2025 - July 2025</p>
-                                <h3 class="text-xl font-semibold text-white mt-1">Artificial Intelligence Intern</h3>
-                                <p class="text-accent-color mb-2">KeyValue Software Systems</p>
-                                <p>Trained in AI and developed DoraAI during an internal hackathon. Contributed to Netra SDK for AI application observability.</p>
-                            </div>
-                        </div>
-                         <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content card">
-                                <p class="text-sm text-gray-400">Jan 2024 - Present</p>
-                                <h3 class="text-xl font-semibold text-white mt-1">Chairperson, ISTE MACE</h3>
-                                <p class="text-accent-color mb-2">Indian Society for Technical Education</p>
-                                <p>Leading the campus chapter of a major national technical society, fostering innovation and learning among peers.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content card">
-                                <p class="text-sm text-gray-400">June 2024 - March 2025</p>
-                                <h3 class="text-xl font-semibold text-white mt-1">AI Teacher (CBSE Curriculum)</h3>
-                                <p class="text-accent-color mb-2">Amrita Vidyalayam, Edappally</p>
-                                <p>Taught AI and CS fundamentals to over 120 high school students, mentoring them on real-world projects.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content card">
-                                <p class="text-sm text-gray-400">May 2025 - June 2025</p>
-                                <h3 class="text-xl font-semibold text-white mt-1">Software Development Intern</h3>
-                                <p class="text-accent-color mb-2">Opine Infotech</p>
-                                <p>Worked in an agile environment using Scrum, Business Driven Development, and Continuous Delivery.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content card">
-                                <p class="text-sm text-gray-400">Aug 2024 - Oct 2023</p>
-                                <h3 class="text-xl font-semibold text-white mt-1">Volunteering & Coordination</h3>
-                                <p class="text-accent-color mb-2">MACE</p>
-                                <p>Served as a Technical Projects Mentor for Takshak '24 and a Coordinator for Smart India Hackathon '23.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="projects" class="py-24 reveal">
-                    <h2 class="section-title">Featured Projects</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="project-card card p-6" onclick="navigateTo('project-dora')">
-                            <h3 class="text-xl font-semibold text-white mb-2">DoraAI: Indoor Navigation System</h3>
-                            <p class="text-gray-400 mb-4">An indoor "Google Maps" for complex corporate buildings, developed in a 4-hour hackathon.</p>
-                            <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">Python</span><span class="tag">BLE</span><span class="tag">ML</span></div>
-                        </div>
-                        <div class="project-card card p-6" onclick="navigateTo('project-backtogether')">
-                            <h3 class="text-xl font-semibold text-white mb-2">Back Together Platform</h3>
-                            <p class="text-gray-400 mb-4">An award-winning platform to combat drug addiction using ML for hotspot detection and community support.</p>
-                             <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">Flutter</span><span class="tag">Python</span><span class="tag">Firebase</span></div>
-                        </div>
-                        <div class="project-card card p-6" onclick="navigateTo('project-cellular')">
-                            <h3 class="text-xl font-semibold text-white mb-2">Graph-Based Cellular Modelling</h3>
-                            <p class="text-gray-400 mb-4">"Best Project" award-winning research using transformers to simulate biological cell behavior.</p>
-                             <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">PyTorch</span><span class="tag">Transformers</span></div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="research" class="py-24 reveal">
-                    <h2 class="section-title">Research & Publications</h2>
-                    <div class="max-w-3xl mx-auto card p-8">
-                        <h3 class="text-xl font-semibold text-white mb-2">CellGraphLLM: Virtual Cell Modeling and Gene Mapping via Transformers</h3>
-                        <p class="text-yellow-400 font-semibold mb-3">Status: Under Peer Review, *Nature Computational Science*</p>
-                        <p class="text-gray-300">This research introduces an integrated framework combining virtual cell modeling, graph-based learning, and a Large Language Model (LLaMA3) for advanced gene-phenotype mapping. The model significantly enhances prediction accuracy and provides biologically interpretable insights for multi-omics integration, marking a step forward in computational systems biology.</p>
-                    </div>
-                </section>
-                
-                <section id="awards" class="py-24 reveal">
-                    <h2 class="section-title">Awards & Certifications</h2>
-                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                        <div class="card p-6"><strong>Best Project Award</strong> - CSE Dept, MACE (2025)</div>
-                        <div class="card p-6"><strong>Third Prize Winner</strong> - IEEE Hack-A-Addict Hackathon (2025)</div>
-                        <div class="card p-6"><strong>AWS Cloud Computing Fundamentals</strong> (2024)</div>
-                        <div class="card p-6"><strong>Artificial Neural Network (ANN)</strong> - IIIT Kottayam (2023)</div>
-                        <div class="card p-6 col-span-1 md:col-span-2"><strong>Quantum Computing and Security</strong> - IIIT Kottayam (2023)</div>
-                     </div>
-                </section>
-            </main>
-             <footer class="border-t border-gray-800 py-8">
-                <div class="container mx-auto px-6 text-center text-gray-500">
-                    <div class="flex justify-center items-center space-x-6 mb-4">
-                        <a href="https://www.linkedin.com/in/vaishnev-sreejeev-ab303525a" target="_blank" rel="noopener noreferrer" class="icon-link"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                        <a href="https://github.com/VaishnevSreejeev" target="_blank" rel="noopener noreferrer" class="icon-link"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg></a>
-                        <a href="https://www.youtube.com/@VaishnevSreejeev" target="_blank" rel="noopener noreferrer" class="icon-link"><svg class="w-7 h-7" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                    </div>
-                    <p>© 2025 Vaishnev Sreejeev. Crafted with care.</p>
-                </div>
-            </footer>
-        </div>
-
-        <div id="project-dora" class="page"></div>
-        <div id="project-backtogether" class="page"></div>
-        <div id="project-cellular" class="page"></div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu-pane">
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#experience" class="mobile-nav-link">Experience</a>
+        <a href="#projects" class="mobile-nav-link">Projects</a>
+        <a href="#research" class="mobile-nav-link">Research</a>
+        <a href="mailto:vaishnevsreejeev@gmail.com" class="mobile-nav-link">Contact</a>
     </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6">
+        <section id="home" class="hero-section flex flex-col-reverse md:flex-row items-center gap-12">
+            <div class="md:w-2/3 text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-fade-in-up">AI & Machine Learning Engineer</h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 animate-fade-in-up" style="animation-delay: 0.2s;">I build intelligent, scalable products by applying cutting-edge research in LLMs and Agentic AI to solve complex, real-world problems.</p>
+            </div>
+            <div class="md:w-1/3 flex justify-center">
+                <div class="avatar-container animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <img src="https://i.imgur.com/3g2D4hA.jpeg" alt="Vaishnev Sreejeev" class="avatar-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 reveal">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-content">Final-year B.Tech student at MACE, Kothamangalam, with a deep passion for Artificial Intelligence. My journey is driven by a desire to not only understand complex systems like LLMs and Brain-Computer Interfaces but to apply that knowledge to build practical, real-world solutions. As a proven leader in technical communities and an experienced AI educator, I bring a unique blend of technical depth, leadership, and communication to every challenge.</p>
+        </section>
+
+        <section id="experience" class="py-24 reveal">
+            <h2 class="section-title">Experience & Leadership</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <p class="text-sm text-gray-400">June 2025 - July 2025</p>
+                        <h3 class="text-xl font-semibold text-white mt-1">Artificial Intelligence Intern</h3>
+                        <p class="text-accent-color mb-2">KeyValue Software Systems</p>
+                        <p>Trained in AI and developed DoraAI during an internal hackathon. Contributed to Netra SDK for AI application observability.</p>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <p class="text-sm text-gray-400">Jan 2024 - Present</p>
+                        <h3 class="text-xl font-semibold text-white mt-1">Chairperson, ISTE MACE</h3>
+                        <p class="text-accent-color mb-2">Indian Society for Technical Education</p>
+                        <p>Leading the campus chapter of a major national technical society, fostering innovation and learning among peers.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <p class="text-sm text-gray-400">June 2024 - March 2025</p>
+                        <h3 class="text-xl font-semibold text-white mt-1">AI Teacher (CBSE Curriculum)</h3>
+                        <p class="text-accent-color mb-2">Amrita Vidyalayam, Edappally</p>
+                        <p>Taught AI and CS fundamentals to over 120 high school students, mentoring them on real-world projects.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <p class="text-sm text-gray-400">May 2025 - June 2025</p>
+                        <h3 class="text-xl font-semibold text-white mt-1">Software Development Intern</h3>
+                        <p class="text-accent-color mb-2">Opine Infotech</p>
+                        <p>Worked in an agile environment using Scrum, Business Driven Development, and Continuous Delivery.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <p class="text-sm text-gray-400">Aug 2024 - Oct 2023</p>
+                        <h3 class="text-xl font-semibold text-white mt-1">Volunteering & Coordination</h3>
+                        <p class="text-accent-color mb-2">MACE</p>
+                        <p>Served as a Technical Projects Mentor for Takshak '24 and a Coordinator for Smart India Hackathon '23.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 reveal">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card card p-6" data-modal-target="modal-dora">
+                    <h3 class="text-xl font-semibold text-white mb-2">DoraAI: Indoor Navigation</h3>
+                    <p class="text-gray-400 mb-4">An indoor "Google Maps" for complex corporate buildings, developed in a 4-hour hackathon.</p>
+                    <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">Python</span><span class="tag">BLE</span><span class="tag">ML</span></div>
+                </div>
+                <div class="project-card card p-6" data-modal-target="modal-backtogether">
+                    <h3 class="text-xl font-semibold text-white mb-2">Back Together Platform</h3>
+                    <p class="text-gray-400 mb-4">An award-winning platform to combat drug addiction using ML for hotspot detection and community support.</p>
+                     <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">Flutter</span><span class="tag">Python</span><span class="tag">Firebase</span></div>
+                </div>
+                <div class="project-card card p-6" data-modal-target="modal-cellular">
+                    <h3 class="text-xl font-semibold text-white mb-2">Graph-Based Cellular Modelling</h3>
+                    <p class="text-gray-400 mb-4">"Best Project" award-winning research using transformers to simulate biological cell behavior.</p>
+                     <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">PyTorch</span><span class="tag">Transformers</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="py-24 reveal">
+            <h2 class="section-title">Research & Publications</h2>
+            <div class="max-w-3xl mx-auto card p-8">
+                <h3 class="text-xl font-semibold text-white mb-2">CellGraphLLM: Virtual Cell Modeling and Gene Mapping via Transformers</h3>
+                <p class="text-yellow-400 font-semibold mb-3">Status: Under Peer Review, *Nature Computational Science*</p>
+                <p class="text-gray-300">This research introduces an integrated framework combining virtual cell modeling, graph-based learning, and a Large Language Model (LLaMA3) for advanced gene-phenotype mapping. The model significantly enhances prediction accuracy and provides biologically interpretable insights for multi-omics integration, marking a step forward in computational systems biology.</p>
+            </div>
+        </section>
+        
+        <section id="awards" class="py-24 reveal">
+            <h2 class="section-title">Awards & Certifications</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div class="card p-6"><strong>Best Project Award</strong> - CSE Dept, MACE (2025)</div>
+                <div class="card p-6"><strong>Third Prize Winner</strong> - IEEE Hack-A-Addict Hackathon (2025)</div>
+                <div class="card p-6"><strong>AWS Cloud Computing Fundamentals</strong> (2024)</div>
+                <div class="card p-6"><strong>Artificial Neural Network (ANN)</strong> - IIIT Kottayam (2023)</div>
+                <div class="card p-6 col-span-1 md:col-span-2"><strong>Quantum Computing and Security</strong> - IIIT Kottayam (2023)</div>
+             </div>
+        </section>
+    </main>
+     <footer class="border-t border-gray-800 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <div class="flex justify-center items-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/vaishnev-sreejeev-ab303525a" target="_blank" rel="noopener noreferrer" class="icon-link"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                <a href="https://github.com/VaishnevSreejeev" target="_blank" rel="noopener noreferrer" class="icon-link"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg></a>
+                <a href="https://www.youtube.com/@VaishnevSreejeev" target="_blank" rel="noopener noreferrer" class="icon-link"><svg class="w-7 h-7" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            </div>
+            <p>© 2025 Vaishnev Sreejeev. Crafted with care.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modals -->
+    <div id="modal-dora" class="modal">
+        <div class="modal-content">
+            <button class="modal-close-button">&times;</button>
+            <h1 class="text-3xl font-extrabold text-white mb-4">DoraAI: Indoor Navigation System</h1>
+            <p class="text-lg text-gray-300 mb-8">Developed during a 4-hour internal hackathon at KeyValue Software Systems.</p>
+            <h2 class="text-2xl font-bold text-white mb-3">The Problem</h2>
+            <p class="mb-6 text-gray-300">Newcomers and visitors to large, complex corporate campuses like SmartCity, Kakkanad, often struggle to find specific offices, meeting rooms, or even an individual's desk. GPS is ineffective indoors, creating a need for a high-accuracy, 'Google Maps'-like system for internal spaces.</p>
+            <h2 class="text-2xl font-bold text-white mb-3">Our Solution</h2>
+            <p class="mb-6 text-gray-300">DoraAI was built to provide a seamless indoor navigation experience. Instead of GPS, we leveraged a network of Bluetooth Low Energy (BLE) beacons placed strategically throughout the building. The system uses trilateration algorithms to get an initial position estimate from the beacon signals, which is then fed into a machine learning model. This ML model continuously optimizes the location data, correcting for signal noise and multipath interference, achieving high-precision, real-time tracking on a user's device.</p>
+        </div>
+    </div>
+    
+    <div id="modal-backtogether" class="modal">
+        <div class="modal-content">
+            <button class="modal-close-button">&times;</button>
+            <h1 class="text-3xl font-extrabold text-white mb-4">Back Together: Anti-Addiction Platform</h1>
+            <p class="text-lg text-gray-300 mb-8">Third Prize Winner - IEEE Hack-A-Addict Hackathon 2025.</p>
+            <img src="https://i.imgur.com/uGZ4G06.png" alt="Back Together App UI" class="project-image">
+            <h2 class="text-2xl font-bold text-white mb-3">The Problem</h2>
+            <p class="mb-6 text-gray-300">Drug addiction is a pressing global issue that lacks accessible resources, real-time monitoring, and effective intervention strategies, creating challenges for prevention, rehabilitation, and law enforcement.</p>
+            <h2 class="text-2xl font-bold text-white mb-3">Our Solution</h2>
+            <p class="mb-6 text-gray-300">"Back Together" is an all-in-one Flutter-based platform that provides a multi-faceted solution for four distinct user types: individuals in recovery, law enforcement, healthcare experts, and community volunteers. Key innovations include ML-powered hotspot detection, a 24/7 AI support chatbot, and integrated telehealth features.</p>
+        </div>
+    </div>
+
+    <div id="modal-cellular" class="modal">
+        <div class="modal-content">
+            <button class="modal-close-button">&times;</button>
+            <h1 class="text-3xl font-extrabold text-white mb-4">Graph-Based Cellular Modelling</h1>
+            <p class="text-lg text-gray-300 mb-8">Awarded "Best Project" by the CSE Department at MACE.</p>
+            <img src="https://i.imgur.com/XFqQJgS.png" alt="Cellular Modelling Visualization" class="project-image">
+            <h2 class="text-2xl font-bold text-white mb-3">The Challenge</h2>
+            <p class="mb-6 text-gray-300">Integrating vast amounts of biological data to understand the cell as a dynamic, whole system remains a major challenge. We aimed to create a virtual cell model that could simulate how the entire system responds to external stimuli.</p>
+            <h2 class="text-2xl font-bold text-white mb-3">Our Approach</h2>
+            <p class="mb-6 text-gray-300">We developed a novel framework to simulate *Mycoplasma Genitalium*. The entire cell was represented as a graph, where nodes are proteins. We then applied a Graph Transformer architecture to predict how each protein would move in response to osmotic stress, training the model on experimental gene expression data.</p>
+        </div>
+    </div>
+    
+    <div class="modal-overlay"></div>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
